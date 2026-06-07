@@ -406,20 +406,6 @@ function initScrollReveal() {
   document.querySelectorAll('.reveal:not(.visible)').forEach((element) => observer.observe(element));
 }
 
-function initSkillBars() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const fill = entry.target;
-        fill.style.width = fill.dataset.width + '%';
-        fill.classList.add('filled');
-      }
-    });
-  }, { threshold: 0.5 });
-
-  document.querySelectorAll('.skill-fill').forEach((bar) => observer.observe(bar));
-}
-
 function initCounters() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -467,7 +453,6 @@ window.addEventListener('scroll', () => {
 document.addEventListener('DOMContentLoaded', () => {
   renderProjects();
   initScrollReveal();
-  initSkillBars();
   initCounters();
   lucide.createIcons();
 });

@@ -165,80 +165,70 @@
     <div class="max-w-7xl mx-auto px-6">
       <div class="reveal text-center mb-12">
         <div class="inline-flex items-center gap-2 bg-stone-200 text-stone-700 px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase mb-4">
-          <i data-lucide="wrench" class="w-3.5 h-3.5"></i> Craft
+          <i data-lucide="wrench" class="w-3.5 h-3.5"></i> Workflow
         </div>
-        <h2 class="font-serif text-4xl md:text-5xl font-medium tracking-tight text-stone-900">Systems I Build</h2>
-        <p class="mt-4 text-stone-500 text-lg max-w-2xl mx-auto">Gameplay engineering across combat, AI, tools, networking, and iteration workflows.</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-medium tracking-tight text-stone-900">Tool Stack</h2>
+        <p class="mt-4 text-stone-500 text-lg max-w-2xl mx-auto">The tools I use day-to-day to ship gameplay features, collaborate with teams, and keep production moving.</p>
       </div>
 
-      <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
-        <div class="reveal glass rounded-2xl p-8 space-y-6">
-          <div>
-            <div class="flex items-center justify-between mb-2 text-sm font-medium text-stone-700">
-              <span>Gameplay Systems</span>
-              <span>95%</span>
-            </div>
-            <div class="h-3 bg-stone-200 rounded-full overflow-hidden">
-              <div class="skill-fill h-full bg-brand-dark rounded-full" data-width="95"></div>
-            </div>
+      <div class="grid lg:grid-cols-3 gap-6">
+        <div class="reveal glass rounded-2xl p-7">
+          <div class="w-12 h-12 rounded-xl bg-brand-dark text-white flex items-center justify-center mb-4">
+            <i data-lucide="code-2" class="w-5 h-5"></i>
           </div>
-          <div>
-            <div class="flex items-center justify-between mb-2 text-sm font-medium text-stone-700">
-              <span>AI and Behavior</span>
-              <span>88%</span>
+          <h3 class="font-serif text-2xl font-semibold text-stone-900 mb-4">Development</h3>
+          <div class="space-y-3 text-sm text-stone-600">
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-brand-dark mt-0.5"></i>
+              <span><strong class="text-stone-800">Visual Studio</strong> for C++ gameplay systems and debugging Unreal projects.</span>
             </div>
-            <div class="h-3 bg-stone-200 rounded-full overflow-hidden">
-              <div class="skill-fill h-full bg-brand-dark rounded-full" data-width="88"></div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-brand-dark mt-0.5"></i>
+              <span><strong class="text-stone-800">Visual Studio Code</strong> for scripting, tooling, quick iteration, and project utilities.</span>
             </div>
-          </div>
-          <div>
-            <div class="flex items-center justify-between mb-2 text-sm font-medium text-stone-700">
-              <span>Networking</span>
-              <span>82%</span>
-            </div>
-            <div class="h-3 bg-stone-200 rounded-full overflow-hidden">
-              <div class="skill-fill h-full bg-brand-dark rounded-full" data-width="82"></div>
-            </div>
-          </div>
-          <div>
-            <div class="flex items-center justify-between mb-2 text-sm font-medium text-stone-700">
-              <span>Tools and Pipelines</span>
-              <span>90%</span>
-            </div>
-            <div class="h-3 bg-stone-200 rounded-full overflow-hidden">
-              <div class="skill-fill h-full bg-brand-dark rounded-full" data-width="90"></div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-brand-dark mt-0.5"></i>
+              <span><strong class="text-stone-800">GitHub Copilot</strong> to speed up boilerplate, refactors, and editor workflows.</span>
             </div>
           </div>
         </div>
 
-        <div class="reveal reveal-delay-1 grid sm:grid-cols-2 gap-4">
-          <div class="glass rounded-2xl p-6">
-            <div class="w-12 h-12 rounded-xl bg-brand-dark text-white flex items-center justify-center mb-4">
-              <i data-lucide="swords" class="w-5 h-5"></i>
-            </div>
-            <h3 class="font-serif text-xl font-semibold text-stone-900 mb-2">Combat Feel</h3>
-            <p class="text-sm text-stone-500 leading-relaxed">Input buffering, cancel windows, hit-stop, knockback tuning, camera response, and animation timing.</p>
+        <div class="reveal reveal-delay-1 glass rounded-2xl p-7">
+          <div class="w-12 h-12 rounded-xl bg-brand-dark text-white flex items-center justify-center mb-4">
+            <i data-lucide="workflow" class="w-5 h-5"></i>
           </div>
-          <div class="glass rounded-2xl p-6">
-            <div class="w-12 h-12 rounded-xl bg-brand-dark text-white flex items-center justify-center mb-4">
-              <i data-lucide="brain" class="w-5 h-5"></i>
+          <h3 class="font-serif text-2xl font-semibold text-stone-900 mb-4">Production</h3>
+          <div class="space-y-3 text-sm text-stone-600">
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-brand-dark mt-0.5"></i>
+              <span><strong class="text-stone-800">GitHub</strong> for version control, pull requests, reviews, and team collaboration.</span>
             </div>
-            <h3 class="font-serif text-xl font-semibold text-stone-900 mb-2">AI Architecture</h3>
-            <p class="text-sm text-stone-500 leading-relaxed">Behavior trees, utility scoring, blackboards, perception systems, and designer-friendly tuning hooks.</p>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-brand-dark mt-0.5"></i>
+              <span><strong class="text-stone-800">Jira</strong> to plan sprints, track gameplay tasks, and communicate progress.</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-brand-dark mt-0.5"></i>
+              <span><strong class="text-stone-800">Perforce</strong> when projects require large binary asset workflows.</span>
+            </div>
           </div>
-          <div class="glass rounded-2xl p-6">
-            <div class="w-12 h-12 rounded-xl bg-brand-dark text-white flex items-center justify-center mb-4">
-              <i data-lucide="network" class="w-5 h-5"></i>
-            </div>
-            <h3 class="font-serif text-xl font-semibold text-stone-900 mb-2">Multiplayer</h3>
-            <p class="text-sm text-stone-500 leading-relaxed">Prediction, reconciliation, rollback experiments, and simulation consistency for high-feel gameplay.</p>
+        </div>
+
+        <div class="reveal reveal-delay-2 glass rounded-2xl p-7">
+          <div class="w-12 h-12 rounded-xl bg-brand-dark text-white flex items-center justify-center mb-4">
+            <i data-lucide="gamepad-2" class="w-5 h-5"></i>
           </div>
-          <div class="glass rounded-2xl p-6">
-            <div class="w-12 h-12 rounded-xl bg-brand-dark text-white flex items-center justify-center mb-4">
-              <i data-lucide="hammer" class="w-5 h-5"></i>
-            </div>
-            <h3 class="font-serif text-xl font-semibold text-stone-900 mb-2">Tooling</h3>
-            <p class="text-sm text-stone-500 leading-relaxed">Data-driven authoring, debug overlays, editor tools, and workflows that speed up iteration.</p>
+          <h3 class="font-serif text-2xl font-semibold text-stone-900 mb-4">Engines and Tech</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag bg-stone-200 text-stone-700 px-3 py-1 rounded-full text-xs font-medium cursor-default">Unreal Engine 5</span>
+            <span class="tag bg-stone-200 text-stone-700 px-3 py-1 rounded-full text-xs font-medium cursor-default">Unity</span>
+            <span class="tag bg-stone-200 text-stone-700 px-3 py-1 rounded-full text-xs font-medium cursor-default">Godot</span>
+            <span class="tag bg-stone-200 text-stone-700 px-3 py-1 rounded-full text-xs font-medium cursor-default">C++</span>
+            <span class="tag bg-stone-200 text-stone-700 px-3 py-1 rounded-full text-xs font-medium cursor-default">C#</span>
+            <span class="tag bg-stone-200 text-stone-700 px-3 py-1 rounded-full text-xs font-medium cursor-default">Blueprints</span>
+            <span class="tag bg-stone-200 text-stone-700 px-3 py-1 rounded-full text-xs font-medium cursor-default">GDScript</span>
+            <span class="tag bg-stone-200 text-stone-700 px-3 py-1 rounded-full text-xs font-medium cursor-default">Gameplay Ability System</span>
+            <span class="tag bg-stone-200 text-stone-700 px-3 py-1 rounded-full text-xs font-medium cursor-default">Profiling and Optimization</span>
           </div>
         </div>
       </div>

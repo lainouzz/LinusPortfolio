@@ -31,8 +31,6 @@ section:not(#contact) .text-stone-400,
 .filter-pill { transition: all 0.25s ease; }
 .filter-pill.active { background: #2C2420; color: white; }
 
-.skill-fill { transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1); width: 0%; }
-
 .modal-overlay { transition: opacity 0.3s ease; }
 .modal-content { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
 
