@@ -218,7 +218,7 @@ function renderProjects() {
   grid.innerHTML = toShow.map((project, index) => `
     <div class="project-card reveal ${index > 2 ? 'reveal-delay-' + (index % 3 + 1) : ''} glass rounded-xl overflow-hidden cursor-pointer" data-id="${project.id}" onclick="openModal(${project.id})">
       <div class="relative overflow-hidden">
-        <img src="${project.thumbnail}" alt="${project.title}" class="project-img w-full h-48 object-cover">
+        <img src="${project.thumbnail}" alt="${project.title}" class="project-img w-full h-48 object-cover" loading="lazy" decoding="async">
         <div class="absolute top-3 left-3 flex items-center gap-2">
           <span class="bg-brand-dark text-white text-[10px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">${project.category}</span>
           ${project.featured ? '<span class="bg-brand-light text-stone-900 text-[10px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">★ Featured</span>' : ''}
@@ -273,7 +273,28 @@ function openModal(id) {
     return;
   }
 
+  const hasVideo = project.videoUrl && project.videoUrl !== '#';
+
   document.getElementById('modal-title').textContent = project.title;
+
+  const videoHtml = hasVideo
+    ? `
+      <div id="project-video" class="mb-8">
+        <h4 class="font-serif text-lg font-semibold text-stone-900 mb-3">Demo Video</h4>
+        <div class="aspect-video rounded-lg overflow-hidden bg-black">
+          <iframe
+            src="${project.videoUrl}"
+            title="${project.title} Demo"
+            class="w-full h-full"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    `
+    : '';
 
   let screenshotsHtml = '';
   if (project.screenshots && project.screenshots.length > 0) {
@@ -281,13 +302,14 @@ function openModal(id) {
       <div class="mb-8">
         <h4 class="font-serif text-lg font-semibold text-stone-900 mb-3">Screenshots</h4>
         <div class="grid ${project.screenshots.length > 1 ? 'md:grid-cols-2' : ''} gap-3">
-          ${project.screenshots.map((screenshot) => `<img src="${screenshot}" alt="Screenshot" class="w-full rounded-lg object-cover h-48 md:h-56">`).join('')}
+          ${project.screenshots.map((screenshot) => `<img src="${screenshot}" alt="Screenshot" class="w-full rounded-lg object-cover h-48 md:h-56" loading="lazy" decoding="async">`).join('')}
         </div>
       </div>
     `;
   }
 
   document.getElementById('modal-body').innerHTML = `
+    ${videoHtml}
     <div class="flex flex-wrap items-center gap-3 mb-6">
       <span class="bg-stone-200 text-stone-700 px-3 py-1 rounded-full text-xs font-medium">${project.platform}</span>
       <span class="bg-stone-200 text-stone-700 px-3 py-1 rounded-full text-xs font-medium">${project.year}</span>
@@ -312,11 +334,11 @@ function openModal(id) {
       ${project.tags.map((tag) => `<span class="bg-stone-200 text-stone-700 px-3 py-1.5 rounded-lg text-xs font-medium">${tag}</span>`).join('')}
     </div>
     <div class="flex items-center gap-4">
-      <a href="${project.videoUrl}" class="bg-bg-secondary text-stone-900 font-medium px-6 py-3 rounded-lg hover:bg-black hover:text-white transition-colors duration-300 ease-in-out flex items-center gap-2">
-        <i data-lucide="play" class="w-4 h-4"></i> Watch Demo
-      </a>
-      <a href="#" class="text-stone-600 font-medium flex items-center gap-1 hover:text-stone-900 transition-colors group">
-        Source Code <i data-lucide="external-link" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+      ${hasVideo
+        ? `<a href="${project.videoUrl}" target="_blank" rel="noopener noreferrer" class="bg-bg-secondary text-stone-900 font-medium px-6 py-3 rounded-lg hover:bg-black hover:text-white transition-colors duration-300 ease-in-out flex items-center gap-2"><i data-lucide="play" class="w-4 h-4"></i> Watch Demo</a>`
+        : `<span class="bg-stone-200 text-stone-500 font-medium px-6 py-3 rounded-lg flex items-center gap-2 cursor-not-allowed"><i data-lucide="clock-3" class="w-4 h-4"></i> Demo Soon</span>`}
+      <a href="#project-modal" class="text-stone-600 font-medium flex items-center gap-1 hover:text-stone-900 transition-colors group">
+        Full Case Study <i data-lucide="external-link" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
       </a>
     </div>
   `;
@@ -338,6 +360,7 @@ function closeModal() {
   setTimeout(() => {
     modal.classList.add('hidden');
     document.body.style.overflow = '';
+    document.getElementById('modal-body').innerHTML = '';
   }, 300);
 }
 
