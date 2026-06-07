@@ -312,7 +312,7 @@ function openModal(id) {
       ${project.tags.map((tag) => `<span class="bg-stone-200 text-stone-700 px-3 py-1.5 rounded-lg text-xs font-medium">${tag}</span>`).join('')}
     </div>
     <div class="flex items-center gap-4">
-      <a href="${project.videoUrl}" class="bg-brand-dark text-white font-medium px-6 py-3 rounded-lg hover:bg-stone-800 transition-colors flex items-center gap-2">
+      <a href="${project.videoUrl}" class="bg-bg-secondary text-stone-900 font-medium px-6 py-3 rounded-lg hover:bg-black hover:text-white transition-colors duration-300 ease-in-out flex items-center gap-2">
         <i data-lucide="play" class="w-4 h-4"></i> Watch Demo
       </a>
       <a href="#" class="text-stone-600 font-medium flex items-center gap-1 hover:text-stone-900 transition-colors group">
