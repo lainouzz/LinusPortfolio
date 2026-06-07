@@ -426,6 +426,7 @@ function initCounters() {
       if (entry.isIntersecting) {
         const element = entry.target;
         const target = parseInt(element.dataset.count, 10);
+        const suffix = element.dataset.suffix || '';
         let current = 0;
         const step = Math.ceil(target / 30);
         const interval = setInterval(() => {
@@ -434,7 +435,7 @@ function initCounters() {
             current = target;
             clearInterval(interval);
           }
-          element.textContent = current;
+          element.textContent = current >= target ? `${current}${suffix}` : `${current}`;
         }, 40);
         observer.unobserve(element);
       }
