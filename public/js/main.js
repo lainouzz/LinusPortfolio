@@ -1,22 +1,20 @@
 const projects = [
   {
     id: 0,
-    title: "Echoes of the Void",
-    category: "unreal",
-    tags: ["Unreal Engine 5", "C++", "GAS"],
-    thumbnail: "https://picsum.photos/seed/echoes-void-rpg/600/400.jpg",
-    description: "Souls-inspired action RPG with custom ability system and rollback netcode.",
+    title: "Sandbox Playground",
+    category: "sfml",
+    tags: ["SFML", "C++", "Physics"],
+    thumbnail: "https://picsum.photos/seed/sandbox-playground/600/400.jpg",
+    description: "A personal project built in SFML with C++ to experiment with Physics driven gameplay that features fully working fluid system, temperature simulation, and dynamic interactions.",
     featured: true,
-    year: "2024",
-    platform: "PC / PS5",
-    role: "Senior Gameplay Programmer",
-    longDesc: "Echoes of the Void is a dark fantasy action RPG where every encounter is a puzzle. I architected the entire combat pipeline from the ground up — from input buffering and combo trees to hit detection and damage application using UE5's Gameplay Ability System (GAS).",
+    year: "2025",
+    platform: "PC",
+    role: "Solo Gameplay Programmer",
+    longDesc: "Sandbox Playground is a personal project built in SFML with C++ to experiment with Physics driven gameplay that features fully working fluid system, temperature simulation, and dynamic interactions.",
     highlights: [
-      "Built a data-driven combo system allowing designers to create 200+ combos without code changes",
-      "Implemented rollback netcode for seamless 2-player co-op with <2ms latency",
-      "Procedural dungeon generation using Wave Function Collapse algorithm",
-      "Boss AI using custom behavior tree decorators and environmental awareness",
-      "Shipped on time with 92 Metacritic score"
+      "Architected a scalable, modular codebase with a strong focus on maintainability, readability, and extensibility.",
+      "Applied modern C++ programming practices, debugging techniques, and performance profiling",
+      "Optimized game update and rendering pipelines to maintain responsive performance with large numbers of active objects."
     ],
     videoUrl: "#",
     screenshots: [
@@ -337,7 +335,7 @@ function openModal(id) {
       ${hasVideo
         ? `<a href="${project.videoUrl}" target="_blank" rel="noopener noreferrer" class="bg-bg-secondary text-stone-900 font-medium px-6 py-3 rounded-lg hover:bg-black hover:text-white transition-colors duration-300 ease-in-out flex items-center gap-2"><i data-lucide="play" class="w-4 h-4"></i> Watch Demo</a>`
         : `<span class="bg-stone-200 text-stone-500 font-medium px-6 py-3 rounded-lg flex items-center gap-2 cursor-not-allowed"><i data-lucide="clock-3" class="w-4 h-4"></i> Demo Soon</span>`}
-      <a href="#project-modal" class="text-stone-600 font-medium flex items-center gap-1 hover:text-stone-900 transition-colors group">
+      <a href="https://github.com/lainouzz/SFML-Sandbox" class="text-stone-600 font-medium flex items-center gap-1 hover:text-stone-900 transition-colors group">
         Full Case Study <i data-lucide="external-link" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
       </a>
     </div>
