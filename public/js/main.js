@@ -16,11 +16,11 @@ const projects = [
       "Applied modern C++ programming practices, debugging techniques, and performance profiling",
       "Optimized game update and rendering pipelines to maintain responsive performance with large numbers of active objects."
     ],
-    videoUrl: "#",
+    videoUrl: "https://www.youtube.com/watch?v=Wp8y9kzPa9k",
     screenshots: [
-      "https://picsum.photos/seed/echoes-ss1/800/450.jpg",
-      "https://picsum.photos/seed/echoes-ss2/800/450.jpg",
-      "https://picsum.photos/seed/echoes-ss3/800/450.jpg"
+      "public\\assets\\images\\SandboxImg2.png",
+      "public\\assets\\images\\SandboxImg3.png",
+      "public\\assets\\images\\SandboxImg4.png"
     ]
   },
   {
@@ -265,6 +265,29 @@ document.getElementById('load-more-btn').addEventListener('click', () => {
   renderProjects();
 });
 
+function toEmbedUrl(url) {
+  if (!url) return url;
+  try {
+    const u = new URL(url);
+    const host = u.hostname.replace('www.', '');
+    if (host.includes('youtube.com')) {
+      if (u.pathname === '/watch') {
+        const v = u.searchParams.get('v');
+        if (v) return `https://www.youtube.com/embed/${v}`;
+      }
+      if (u.pathname.startsWith('/embed/')) return url;
+    }
+    if (host === 'youtu.be') {
+      const id = u.pathname.slice(1);
+      if (id) return `https://www.youtube.com/embed/${id}`;
+    }
+  } catch (e) {
+    const m = url.match(/(?:youtu\.be\/|v=)([\w-]{6,})/);
+    if (m && m[1]) return `https://www.youtube.com/embed/${m[1]}`;
+  }
+  return url;
+}
+
 function openModal(id) {
   const project = projects.find((entry) => entry.id === id);
   if (!project) {
@@ -281,7 +304,7 @@ function openModal(id) {
         <h4 class="font-serif text-lg font-semibold text-stone-900 mb-3">Demo Video</h4>
         <div class="aspect-video rounded-lg overflow-hidden bg-black">
           <iframe
-            src="${project.videoUrl}"
+            src="${toEmbedUrl(project.videoUrl)}"
             title="${project.title} Demo"
             class="w-full h-full"
             loading="lazy"
@@ -300,7 +323,11 @@ function openModal(id) {
       <div class="mb-8">
         <h4 class="font-serif text-lg font-semibold text-stone-900 mb-3">Screenshots</h4>
         <div class="grid ${project.screenshots.length > 1 ? 'md:grid-cols-2' : ''} gap-3">
-          ${project.screenshots.map((screenshot) => `<img src="${screenshot}" alt="Screenshot" class="w-full rounded-lg object-cover h-48 md:h-56" loading="lazy" decoding="async">`).join('')}
+          ${project.screenshots.map((screenshot) => `
+            <div class="h-48 md:h-56 bg-[#0f0f13] rounded-lg overflow-hidden flex items-center justify-center">
+              <img src="${screenshot}" alt="Screenshot" class="max-w-full max-h-full object-contain" loading="lazy" decoding="async">
+            </div>
+          `).join('')}
         </div>
       </div>
     `;
