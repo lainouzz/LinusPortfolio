@@ -4,7 +4,7 @@ const projects = [
     title: "Sandbox Playground",
     category: "sfml",
     tags: ["SFML", "C++", "Physics"],
-    thumbnail: "https://picsum.photos/seed/sandbox-playground/600/400.jpg",
+    thumbnail: "public\\assets\\images\\SandboxImg.png",
     description: "A personal project built in SFML with C++ to experiment with Physics driven gameplay that features fully working fluid system, temperature simulation, and dynamic interactions.",
     featured: true,
     year: "2025",
@@ -24,183 +24,68 @@ const projects = [
     ]
   },
   {
-    id: 1,
-    title: "Neon Drift",
-    category: "unity",
-    tags: ["Unity", "C#", "Physics"],
-    thumbnail: "https://picsum.photos/seed/neon-drift-racing/600/400.jpg",
-    description: "High-speed anti-gravity racer with realistic physics and track editor.",
-    year: "2023",
-    platform: "PC / Switch",
-    role: "Gameplay Programmer",
-    longDesc: "Neon Drift is an anti-gravity racer that prioritizes speed and track creativity. I built the vehicle physics from scratch using Unity's DOTS physics system, creating a feel that's both arcadey and deep.",
+    id: 3,
+    title: "Minecraft Mod Development",
+    category: "work",
+    tags: ["JavaScript", "TypeScript", "Mods", "Bedrock Edition", "GameTest Framework"],
+    thumbnail: "public\\assets\\images\\Minecraft.png",
+    description: "Contributed to an official Minecraft Bedrock add-on at a Mojang Development Parter company, House Of How. as a Intern Gameplay Programmer.",
+    year: "2025",
+    platform: "PC (Minecraft Bedrock Edition), Console (Minecraft Bedrock Edition)",
+    role: "Intern Gameplay Programmer",
+    longDesc: "During my internship at House Of How I contributed to a Minecraft mod where players could purchase and run a restaurant, upgrade it over time, take in orders and earn money, and progress toward converting it into a hotel. Worked on gameplay systems for 2 months before transitioning to an internal project. Due to NDA restrictions no screenshots or footage could be taken during this time.",
     highlights: [
-      "Custom physics model simulating magnetic track adhesion and air resistance",
-      "Built a node-based track editor allowing community track creation",
-      "Implemented async multiplayer with prediction and reconciliation",
-      "Optimized to hit 120fps on Switch in docked mode"
+      "Worked on progression systems tied to restaurant upgrades and player economy",
+      "Contributed to gameplay logic for purchasable and upgradeable in-world structures",
+      "Adapted mid-internship to an Unreal Engine 5 codebase, picking up new tools and workflows quickly"
     ],
     videoUrl: "#",
     screenshots: [
-      "https://picsum.photos/seed/neon-ss1/800/450.jpg",
-      "https://picsum.photos/seed/neon-ss2/800/450.jpg"
+      "public\\assets\\images\\Minecraft.png",
+    ]
+  },
+  {
+    id: 1,
+    title: "Advanced Weapon System",
+    category: "unity",
+    tags: ["Unity", "C#", "System Design"],
+    thumbnail: "public\\assets\\images\\AWS-Thumbnail.png",
+    description: "Fully customizable firearm system in Unity with procedural animation and attachment-based customization.",
+    year: "2024",
+    platform: "PC",
+    role: "Solo Gameplay Programmer",
+    longDesc: "Built a fully customizable firearm system in Unity utilizing procedural animation techniques, attachment-based customization, and parameter-driven weapon behavior for efficient gameplay tuning. The system supports a wide variety of weapon types and allows designers to create new weapons without additional programming.",
+    highlights: [
+      "First ever proper Weapon project, built from the ground up with extensibility in mind",
+      "Built a modular attachment system that allows for dynamic stat changes and visual updates based on equipped attachments",
+      "Implemented procedural animation for recoil and sway, allowing for a wide variety of weapon behaviors without needing unique animations for each weapon"
+    ],
+    videoUrl: "https://youtu.be/Dwy508wOmEo",
+    screenshots: [
+      "public\\assets\\images\\AWS1.png",
+      "public\\assets\\images\\AWS2.png"
     ]
   },
   {
     id: 2,
-    title: "Hexbound",
+    title: "Procedural Mesh Generator",
     category: "unity",
-    tags: ["Unity", "C#", "Netcode"],
-    thumbnail: "https://picsum.photos/seed/hexbound-roguelike/600/400.jpg",
-    description: "Roguelike deckbuilder with real-time card combat and co-op.",
-    year: "2022",
+    tags: ["Unity", "C#", "Math", "Procedural Generation", "Mesh Generation"],
+    thumbnail: "public\\assets\\images\\PM-thumbnail.png",
+    description: "Procedural mesh generator for creating complex 3D models in Unity.",
+    year: "2024",
     platform: "PC",
     role: "Gameplay Programmer",
-    longDesc: "Hexbound blends Slay the Spire strategy with Hades-style action. I designed the card ability system that lets cards interact with real-time combat — shields block, spells aim, and combos chain in real-time.",
+    longDesc: "Built a procedural mesh generation system in Unity that generates terrain and primitive shapes, including terrain heightmaps and cylinders, entirely through code without relying on Unity's built-in primitives or terrain system. Vertices, triangles, and UVs are calculated both at runtime and in editor.",
     highlights: [
-      "Card ability framework supporting 350+ unique cards with modifier stacking",
-      "Real-time card combat with input queuing and cancel windows",
-      "Co-op netcode with deterministic simulation for card resolution",
-      "Modding API that spawned a 10k+ member community"
+      "100% code-generated geometry — zero imported meshes or Unity primitives",
+      "Implemented cylinder and cube mesh generation from scratch by manually calculating vertex rings, triangle winding order, and UV layouts",
+      "Exposed generation parameters through the Inspector for real-time iteration without code changes"
     ],
-    videoUrl: "#",
+    videoUrl: "https://youtu.be/nkrdwcayU9c",
     screenshots: [
-      "https://picsum.photos/seed/hex-ss1/800/450.jpg",
-      "https://picsum.photos/seed/hex-ss2/800/450.jpg"
-    ]
-  },
-  {
-    id: 3,
-    title: "Warden's Keep",
-    category: "unreal",
-    tags: ["Unreal Engine", "C++", "AI"],
-    thumbnail: "https://picsum.photos/seed/wardens-keep-stealth/600/400.jpg",
-    description: "Stealth-action game with emergent AI and systemic level design.",
-    year: "2023",
-    platform: "PC / PS5",
-    role: "AI Programmer",
-    longDesc: "Warden's Keep is a stealth game where the AI learns from your patterns. I built the knowledge representation system that tracks player behavior and adapts guard patrol routes and detection strategies.",
-    highlights: [
-      "AI knowledge system with 40+ player behavior trackers",
-      "Emergent guard coordination using blackboard sharing",
-      "Systemic interactions: fire, noise, light all affect AI detection",
-      "Custom navigation mesh for 3D vertical pathfinding"
-    ],
-    videoUrl: "#",
-    screenshots: [
-      "https://picsum.photos/seed/warden-ss1/800/450.jpg"
-    ]
-  },
-  {
-    id: 4,
-    title: "Tiny Wizards",
-    category: "jam",
-    tags: ["Godot", "GDScript", "48h"],
-    thumbnail: "https://picsum.photos/seed/tiny-wizards-jam/600/400.jpg",
-    description: "Ludum Dare 55 entry — cooperative spell-crafting puzzle game. Won 2nd place.",
-    year: "2024",
-    platform: "Web",
-    role: "Solo Dev",
-    longDesc: "Built in 48 hours for Ludum Dare 55 (theme: 'Summon'). Two players share a spellbook and must combine runes cooperatively to defeat enemies. Surprisingly deep for a jam game!",
-    highlights: [
-      "2nd place out of 3,400+ entries",
-      "Rune-combining spell system with 60+ combinations",
-      "Local co-op with shared screen and shared spellbook",
-      "Featured on 'Best of Ludum Dare' YouTube roundup"
-    ],
-    videoUrl: "#",
-    screenshots: [
-      "https://picsum.photos/seed/tiny-ss1/800/450.jpg"
-    ]
-  },
-  {
-    id: 5,
-    title: "Grapple Gunner",
-    category: "personal",
-    tags: ["Godot", "GDScript", "Open Source"],
-    thumbnail: "https://picsum.photos/seed/grapple-gunner-movement/600/400.jpg",
-    description: "Open-source movement tech demo showcasing advanced grapple physics in Godot.",
-    year: "2024",
-    platform: "PC / Web",
-    role: "Solo Dev",
-    longDesc: "A physics playground built to explore what makes grapple mechanics feel incredible. Iterated over 30 versions of the swinging model. Open-sourced so others can learn from the approach.",
-    highlights: [
-      "30+ iterations on grapple physics for 'just right' feel",
-      "Momentum conservation system preserving speed through swings",
-      "Open source with detailed dev blog on every iteration",
-      "1.2k GitHub stars, featured in Godot community showcase"
-    ],
-    videoUrl: "#",
-    screenshots: [
-      "https://picsum.photos/seed/grapple-ss1/800/450.jpg",
-      "https://picsum.photos/seed/grapple-ss2/800/450.jpg"
-    ]
-  },
-  {
-    id: 6,
-    title: "DungeonStack",
-    category: "jam",
-    tags: ["Unity", "C#", "72h"],
-    thumbnail: "https://picsum.photos/seed/dungeon-stack-puzzle/600/400.jpg",
-    description: "GMTK Game Jam 2023 — Stack dungeon rooms to build your path. Top 50 finish.",
-    year: "2023",
-    platform: "Web",
-    role: "Solo Dev",
-    longDesc: "Built for GMTK Jam 2023 (theme: 'Roles Reversed'). Instead of exploring a dungeon, you BUILD it by stacking rooms Tetris-style while an AI hero navigates your creation. Top 50 out of 6,000+ entries.",
-    highlights: [
-      "Top 50 / 6,000+ entries",
-      "Room-stacking procedural generation",
-      "AI hero that pathfinds through your built dungeon",
-      "2,000+ plays on itch.io in first week"
-    ],
-    videoUrl: "#",
-    screenshots: [
-      "https://picsum.photos/seed/stack-ss1/800/450.jpg"
-    ]
-  },
-  {
-    id: 7,
-    title: "Skyframe",
-    category: "personal",
-    tags: ["Unreal Engine 5", "C++", "VFX"],
-    thumbnail: "https://picsum.photos/seed/skyframe-airship/600/400.jpg",
-    description: "Airship combat prototype with modular damage and Niagara VFX system.",
-    year: "2024",
-    platform: "PC",
-    role: "Solo Dev",
-    longDesc: "A prototype exploring modular ship damage where each component (hull, engine, weapons, balloon) can be individually targeted and destroyed. Features a custom Niagara VFX pipeline for fire, smoke, and debris propagation.",
-    highlights: [
-      "Modular damage system with 12 destructible components per ship",
-      "Fire propagation simulation using Niagara",
-      "Destructible mesh integration with physics-based debris",
-      "Dev blog series with 50k+ total views"
-    ],
-    videoUrl: "#",
-    screenshots: [
-      "https://picsum.photos/seed/sky-ss1/800/450.jpg",
-      "https://picsum.photos/seed/sky-ss2/800/450.jpg"
-    ]
-  },
-  {
-    id: 8,
-    title: "Pocket Quest",
-    category: "unity",
-    tags: ["Unity", "C#", "Mobile"],
-    thumbnail: "https://picsum.photos/seed/pocket-quest-mobile/600/400.jpg",
-    description: "Idle RPG with real-time boss fights and 500k+ downloads.",
-    year: "2021",
-    platform: "iOS / Android",
-    role: "Gameplay Programmer",
-    longDesc: "An idle RPG that secretly has real-time action combat during boss fights. I built the auto-battle AI, the real-time boss combat system, and the offline progression calculator.",
-    highlights: [
-      "500k+ downloads across iOS and Android",
-      "Hybrid idle + real-time combat system",
-      "Offline progression with deterministic simulation",
-      "Live ops event system running 2+ years post-launch"
-    ],
-    videoUrl: "#",
-    screenshots: [
-      "https://picsum.photos/seed/pocket-ss1/800/450.jpg"
+      "public\\assets\\images\\PM1.png",
+      "public\\assets\\images\\PM2.png"
     ]
   }
 ];
@@ -363,7 +248,7 @@ function openModal(id) {
         ? `<a href="${project.videoUrl}" target="_blank" rel="noopener noreferrer" class="bg-bg-secondary text-stone-900 font-medium px-6 py-3 rounded-lg hover:bg-black hover:text-white transition-colors duration-300 ease-in-out flex items-center gap-2"><i data-lucide="play" class="w-4 h-4"></i> Watch Demo</a>`
         : `<span class="bg-stone-200 text-stone-500 font-medium px-6 py-3 rounded-lg flex items-center gap-2 cursor-not-allowed"><i data-lucide="clock-3" class="w-4 h-4"></i> Demo Soon</span>`}
       <a href="https://github.com/lainouzz/SFML-Sandbox" class="text-stone-600 font-medium flex items-center gap-1 hover:text-stone-900 transition-colors group">
-        Full Case Study <i data-lucide="external-link" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+        View Code <i data-lucide="external-link" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
       </a>
     </div>
   `;
