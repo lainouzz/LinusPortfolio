@@ -109,10 +109,13 @@ function renderProjects() {
         </div>
       </div>
       <div class="p-5">
-        <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center justify-between mb-1.5">
           <h3 class="font-serif text-lg font-semibold text-stone-900">${project.title}</h3>
           <span class="text-xs text-stone-400">${project.year}</span>
         </div>
+        ${project.role ? `<div class="flex items-center gap-1.5 text-xs font-medium text-brand-neutral mb-2">
+          <i data-lucide="user-round" class="w-3 h-3"></i> ${project.role}
+        </div>` : ''}
         <p class="text-sm text-stone-500 leading-relaxed mb-3">${project.description}</p>
         <div class="flex flex-wrap gap-1.5">
           ${project.tags.map((tag) => `<span class="bg-stone-200 text-stone-700 px-2 py-0.5 rounded text-[10px] font-medium">${tag}</span>`).join('')}
